@@ -1,0 +1,107 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Step1 Training MagicPoint on Synthetic Shapes",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/experiment.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "train",
+                "configs/magic-point_shapes.yaml",
+                "magic-point_synth"
+            ]
+        },
+        {
+            "name": "Step2 Exporting detections on Finger",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/export_detections.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "configs/magic-point_finger_export.yaml",
+                "magic-point_synth",
+                "--pred_only",
+                "--batch_size=5",
+                "--export_name=magic-point_finger-export1"
+            ]
+        },
+        {
+            "name": "Step2_debug ",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/export_detections.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "configs/magic-point_finger_export.yaml",
+                "magic-point_synth",
+                "--pred_only",
+                "--batch_size=5",
+                "--export_name=magic-point_finger-export_debug",
+            ]
+        },
+        {
+            "name": "Step3 Training MagicPoint on Finger",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/experiment.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "train",
+                "configs/magic-point_finger_train.yaml",
+                "magic-point_finger"
+            ]
+        },
+        {
+            "name": "Step4 Exporting detections on Finger",
+            // Different model with step2
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/export_detections.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "configs/magic-point_finger_export.yaml",
+                "magic-point_finger",
+                "--pred_only",
+                "--batch_size=50",
+                "--export_name=magic-point_finger-export2"
+            ]
+        },       
+
+        
+    ]
+}

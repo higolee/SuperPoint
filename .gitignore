@@ -2,3 +2,7 @@ env/
 __pycache__/
 *.egg-info/
 settings.py
+data/
+experiments/
+tmp/
+notebooks/.ipynb_checkpoints/
