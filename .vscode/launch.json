@@ -100,7 +100,26 @@
                 "--batch_size=50",
                 "--export_name=magic-point_finger-export2"
             ]
-        },       
+        },      
+        {
+            "name": "Step5 Training of SuperPoint on Finger",
+            // Different model with step2
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/experiment.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "train",
+                "configs/superpoint_finger.yaml",
+                "superpoint_finger"
+            ]
+        },        
 
         
     ]
