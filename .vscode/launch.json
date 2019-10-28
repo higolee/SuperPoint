@@ -43,6 +43,25 @@
             ]
         },
         {
+            "name": "Step2_all Exporting detections on Finger",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/export_detections.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "configs/magic-point_finger_export.yaml",
+                "magic-point_synth",
+                "--batch_size=5",
+                "--export_name=magic-point_finger-export1_all"
+            ]
+        },
+        {
             "name": "Step2_debug ",
             "type": "python",
             "request": "launch",
@@ -120,7 +139,69 @@
                 "superpoint_finger"
             ]
         },        
-
+        {
+            "name": "testA Export detection of superpoint",
+            // Different model with step2
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/export_detections.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "configs/super-point_finger_export.yaml",
+                "superpoint_finger",
+                "--pred_only",
+                "--batch_size=5",
+                "--export_name=super-point_finger-export",
+            ]
+        },     
+        {
+            "name": "testB1 Export model of superpoint",
+            // Different model with step2
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/export_model.py",
+            "console": "integratedTerminal",
+            //"console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                // "configs/super-point_finger_export.yaml",
+                // "superpoint_finger",
+                // "configs/magic-point_finger_export.yaml",
+                // "magic-point_synth",
+                "configs/magic-point_finger_export.yaml",
+                "magic-point_finger",
+            ]
+        },         
+        {
+            "name": "testB2 Demo features matching",
+            // Different model with step2
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/superpoint/match_features_demo.py",
+            //"console": "integratedTerminal",
+            "console": "externalTerminal",
+            "cwd": "${workspaceFolder}/superpoint",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "TMPDIR": "${workspaceFolder}/tmp"
+            },
+            "args": [
+                "superpoint_finger",
+                "/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train/0000_c1_0000_p_v2normal178R1.png",
+                //"/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train/0005_c1_0024_p_v2normal602R2.png",                
+                "/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train/0005_c1_0023_p_v2normal602R2.png"
+            ]
+        },     
         
     ]
 }
