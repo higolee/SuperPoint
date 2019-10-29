@@ -37,8 +37,8 @@ model:
     batch_size: 32
     eval_batch_size: 32
     learning_rate: 0.001
-    detection_threshold: 0.03 #0.0001 # 0.015
-    nms: 8
+    detection_threshold: 0.015 #0.0001 # 0.015
+    nms: 4
     # top_k: 300
 train_iter: 10000
 validation_interval: 100

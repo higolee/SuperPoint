@@ -194,8 +194,8 @@
             },
             "args": [
                 "superpoint_finger",
-                "/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train_debug/0000_c1_0000_p_v2normal178R1.png",
-                // "/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train_debug/0005_c1_0024_p_v2normal602R2.png",                
+                // "/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train_debug/0000_c1_0000_p_v2normal178R1.png",
+                "/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train_debug/0005_c1_0024_p_v2normal602R2.png",                
                 "/home/xm-ailab-000/sen/SuperPoint/data/finger/bounding_box_train_debug/0005_c1_0023_p_v2normal602R2.png"
             ]
         },     

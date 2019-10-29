@@ -2,7 +2,7 @@ data:
     name: 'finger'
     cache_in_memory: false
     validation_size: 96
-    labels: outputs/magic-point_finger-export2  # use your own labels here
+    labels: outputs/magic-point_finger-export1  # use your own labels here
     augmentation:
         photometric:
             enable: true
@@ -39,12 +39,12 @@ model:
     batch_size: 16
     eval_batch_size: 16
     learning_rate: 0.0001
-    lambda_d: 800
+    lambda_d: 300
     positive_margin: 1
     negative_margin: 0.2
     lambda_loss: 1
-    detection_threshold: 0.03
-    nms: 8
+    detection_threshold: 0.001
+    nms: 4
     top_k: 300
 train_iter: 30000
 validation_interval: 100
