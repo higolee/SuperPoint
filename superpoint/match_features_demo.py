@@ -137,6 +137,7 @@ if __name__ == '__main__':
         # Match and get rid of outliers
         m_kp1, m_kp2, matches = match_descriptors(kp1, desc1, kp2, desc2)
         H, inliers = compute_homography(m_kp1, m_kp2)
+        print(f'matches:{len(matches)}. inliers:{inliers.sum()}')
 
         # Draw SuperPoint matches
         matches = np.array(matches)[inliers.astype(bool)].tolist()
@@ -153,6 +154,7 @@ if __name__ == '__main__':
         sift_m_kp1, sift_m_kp2, sift_matches = match_descriptors(
                 sift_kp1, sift_desc1, sift_kp2, sift_desc2)
         sift_H, sift_inliers = compute_homography(sift_m_kp1, sift_m_kp2)
+        print(f'sift_matches:{len(sift_matches)}. sift_inliers:{sift_inliers.sum()}')
 
         # Draw SIFT matches
         sift_matches = np.array(sift_matches)[sift_inliers.astype(bool)].tolist()
