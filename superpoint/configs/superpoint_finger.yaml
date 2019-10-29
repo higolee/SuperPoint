@@ -43,8 +43,8 @@ model:
     positive_margin: 1
     negative_margin: 0.2
     lambda_loss: 1
-    detection_threshold: 0.0001
-    nms: 14
+    detection_threshold: 0.03
+    nms: 8
     top_k: 300
-train_iter: 170000
-validation_interval: 5000
+train_iter: 30000
+validation_interval: 100

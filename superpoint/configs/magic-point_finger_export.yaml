@@ -6,8 +6,8 @@ model:
     name: 'magic_point'
     batch_size: 50
     learning_rate: 0.001
-    detection_threshold: 0.0001 #0.0001 #0.015  # 0.001
-    nms: 14
+    detection_threshold: 0.03 #0.0001 #0.015  # 0.001
+    nms: 8
     #top_k: 300
     homography_adaptation:
         num: 100
